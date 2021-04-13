@@ -1,3 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+:root {
+  --bg-default: linear-gradient(
+    0deg,
+    rgba(42, 119, 247, 1) 0%,
+    rgba(18, 67, 170, 1) 100%
+  );
+  --bg-orange: #ef7f3c;
+  --bg-white: #fff;
+  --bg-white-2: #f2f5ff;
+  --bg-black: #061d36;
+  --text-color-white: #fff;
+  --text-color-black: #000000;
+  --text-color-black-2: #111111;
+  --text-color-blue-2: #002348;
+  --text-color-gray: #a3a3a3;
+  --text-color-gray-2: #5a6978;
+  --default-font: 'Montserrat', sans-serif; }
+
 /*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -454,3 +473,6 @@ table {
 
 td {
   padding: 0; }
+
+* {
+  font-family: var(--default-font); }
