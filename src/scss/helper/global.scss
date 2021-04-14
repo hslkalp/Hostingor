@@ -14,3 +14,21 @@ button {
   transition: 1s all ease !important;
   pointer-events: all !important;
 }
+
+.row {
+  @include flex-row;
+}
+
+img.profile-image {
+  width: 60px;
+  height: auto;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+img.company-image {
+  width: 40px;
+  height: auto;
+  background: inherit;
+  margin-bottom: 20px;
+}

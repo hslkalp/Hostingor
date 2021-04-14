@@ -21,6 +21,14 @@
     padding: 120px 0px;
   }
 }
+
+.services-wrapper {
+  max-width: 1200px;
+  margin: 0px auto;
+  @include width-height-full;
+  padding: var(--header-padding-gap) var(--mobile-padding-gap);
+}
+
 .hero-img-wrapper {
   @include width-height-full;
   margin-bottom: 20px;
@@ -61,5 +69,70 @@ section.hero {
     color: var(--text-color-white);
     background: var(--bg-orange);
     border-radius: 20px;
+  }
+}
+
+section.services {
+  background: var(--bg-white-2);
+  .row {
+    justify-content: center;
+    @include screen('desktop') {
+      justify-content: space-between;
+    }
+    .card:not(:first-child) {
+      display: none;
+      @include screen('desktop') {
+        display: block;
+      }
+    }
+  }
+
+  .company {
+    .card {
+      padding: 16px 30px;
+      height: 122px;
+      @include screen('desktop') {
+        margin-right: 24px;
+      }
+    }
+  }
+  .card {
+    width: 330px;
+    margin-bottom: 30px;
+    @include screen('desktop') {
+      margin-right: 20px;
+    }
+  }
+  p {
+    color: var(--text-color-blue-2);
+  }
+  h2.services-title {
+    font-size: 1.75em;
+    text-align: center;
+    text-transform: capitalize;
+    margin-bottom: 30px;
+    @include screen('desktop') {
+      font-size: 2em;
+      margin-bottom: 50px;
+    }
+  }
+  p.customer-name {
+    font-size: 1.3em;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  p.customer-job {
+    font-size: 0.875em;
+    margin-bottom: 20px;
+  }
+  p.customer-message {
+    font-size: 1em;
+    line-height: 1.7em;
+  }
+  p.company-name {
+    font-size: 0.75em;
+    line-height: 1.5em;
+    color: var(--text-color-gray);
+    margin-bottom: 12px;
   }
 }
