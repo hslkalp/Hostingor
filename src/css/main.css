@@ -1,10 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
 :root {
-  --bg-default: linear-gradient(
-    0deg,
-    rgba(42, 119, 247, 1) 0%,
-    rgba(18, 67, 170, 1) 100%
-  );
+  --bg-default: rgba(42, 119, 247, 1);
   --bg-orange: #ef7f3c;
   --bg-white: #fff;
   --bg-white-2: #f2f5ff;
@@ -503,6 +499,9 @@ button {
   justify-content: flex-start;
   align-items: center;
   padding: 0px var(--mobile-padding-gap); }
+  @media (min-width: 1200px) {
+    .header-wrapper {
+      padding: 0px; } }
 
 header {
   height: var(--header-height);
@@ -558,3 +557,68 @@ nav {
         color: var(--text-color-white);
         font-weight: 700;
         text-transform: capitalize; }
+
+.hero-wrapper {
+  max-width: 1200px;
+  margin: 0px auto;
+  display: flex;
+  flex-flow: column-reverse nowrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  padding: var(--header-padding-gap) var(--mobile-padding-gap); }
+  @media (min-width: 992px) {
+    .hero-wrapper {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: flex-start;
+      align-items: center;
+      align-items: flex-start;
+      text-align: left;
+      padding: 120px var(--mobile-padding-gap); }
+      .hero-wrapper .block1 {
+        width: 51.6666%; }
+      .hero-wrapper .block2 {
+        width: 48.3333%; } }
+  @media (min-width: 1200px) {
+    .hero-wrapper {
+      padding: 120px 0px; } }
+
+.hero-img-wrapper {
+  width: 100%;
+  height: 100%;
+  margin-bottom: 20px;
+  border-radius: 20px; }
+  .hero-img-wrapper img {
+    width: 100%;
+    height: auto;
+    border-radius: inherit; }
+
+section.hero {
+  background: var(--bg-default);
+  color: var(--text-color-white); }
+  section.hero h1.hero-title {
+    font-size: 1.625em;
+    line-height: 1.4375em;
+    margin-bottom: 20px;
+    max-width: 600px; }
+    section.hero h1.hero-title::first-letter {
+      text-transform: uppercase; }
+    @media (min-width: 992px) {
+      section.hero h1.hero-title {
+        font-size: 2.625em; } }
+  section.hero p.hero-sub-title {
+    font-size: 1.125em;
+    line-height: 1.4em;
+    margin-bottom: 20px;
+    max-width: 540px; }
+  section.hero button.hero-btn {
+    padding: 1.6255em 3.7em;
+    margin-top: 20px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--text-color-white);
+    background: var(--bg-orange);
+    border-radius: 20px; }

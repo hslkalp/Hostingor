@@ -1,11 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 :root {
   // * bakground
-  --bg-default: linear-gradient(
-    0deg,
-    rgba(42, 119, 247, 1) 0%,
-    rgba(18, 67, 170, 1) 100%
-  );
+  --bg-default: rgba(42, 119, 247, 1);
   --bg-orange: #ef7f3c;
   --bg-white: #fff;
   --bg-white-2: #f2f5ff;
