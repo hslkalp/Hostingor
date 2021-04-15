@@ -1,10 +1,8 @@
 .hero-wrapper {
-  max-width: 1200px;
-  margin: 0px auto;
+  @include wrapper-default;
   @include flex-col-reverse;
   @include width-height-full;
   text-align: center;
-  padding: var(--header-padding-gap) var(--mobile-padding-gap);
   @include screen('desktop') {
     @include flex-row;
     align-items: flex-start;
@@ -23,13 +21,24 @@
 }
 
 .services-wrapper {
-  max-width: 1200px;
-  margin: 0px auto;
+  @include wrapper-default;
   @include width-height-full;
-  padding: var(--header-padding-gap) var(--mobile-padding-gap);
 }
 
-.hero-img-wrapper {
+.experience-wrapper {
+  @include wrapper-default;
+  @include width-height-full;
+  text-align: center;
+}
+
+.about-hostingor-wrapper {
+  @include wrapper-default;
+  max-width: 930px;
+  @include width-height-full;
+  text-align: center;
+}
+
+.hostingor-img-wrapper {
   @include width-height-full;
   margin-bottom: 20px;
   border-radius: 20px;
@@ -44,10 +53,10 @@ section.hero {
   background: var(--bg-default);
   color: var(--text-color-white);
   h1.hero-title {
-    font-size: 1.625em;
-    line-height: 1.4375em;
     margin-bottom: 20px;
     max-width: 600px;
+    font-size: 1.625em;
+    line-height: 1.4375em;
     &::first-letter {
       text-transform: uppercase;
     }
@@ -56,35 +65,26 @@ section.hero {
     }
   }
   p.hero-sub-title {
-    font-size: 1.125em;
-    line-height: 1.4em;
     margin-bottom: 20px;
     max-width: 540px;
+    font-size: 1.125em;
+    line-height: 1.4em;
   }
   button.hero-btn {
     padding: 1.6255em 3.7em;
     margin-top: 20px;
-    text-transform: uppercase;
-    font-weight: 700;
-    color: var(--text-color-white);
-    background: var(--bg-orange);
     border-radius: 20px;
+    background: var(--bg-orange);
+    color: var(--text-color-white);
+    font-weight: 700;
+    text-transform: uppercase;
   }
 }
 
 section.services {
   background: var(--bg-white-2);
   .row {
-    justify-content: center;
-    @include screen('desktop') {
-      justify-content: space-between;
-    }
-    .card:not(:first-child) {
-      display: none;
-      @include screen('desktop') {
-        display: block;
-      }
-    }
+    @include card-view;
   }
 
   .company {
@@ -101,38 +101,134 @@ section.services {
     margin-bottom: 30px;
     @include screen('desktop') {
       margin-right: 20px;
+      max-width: 390px;
     }
   }
   p {
     color: var(--text-color-blue-2);
   }
   h2.services-title {
+    margin-bottom: 30px;
     font-size: 1.75em;
     text-align: center;
     text-transform: capitalize;
-    margin-bottom: 30px;
     @include screen('desktop') {
       font-size: 2em;
       margin-bottom: 50px;
     }
   }
-  p.customer-name {
-    font-size: 1.3em;
-    font-weight: 700;
-    margin-bottom: 10px;
-  }
-  p.customer-job {
-    font-size: 0.875em;
-    margin-bottom: 20px;
-  }
-  p.customer-message {
-    font-size: 1em;
-    line-height: 1.7em;
-  }
   p.company-name {
+    margin-bottom: 12px;
     font-size: 0.75em;
     line-height: 1.5em;
     color: var(--text-color-gray);
-    margin-bottom: 12px;
+  }
+}
+
+section.experience {
+  background: var(--bg-default);
+  .row {
+    @include card-view;
+  }
+  .card {
+    @include screen('desktop') {
+      margin-right: 20px;
+      max-width: 390px;
+    }
+  }
+  .img-wrapper {
+    width: 80px;
+    height: 80px;
+    padding: 10px;
+    margin: 0px auto 20px;
+    border-radius: 20px;
+    background: var(--bg-orange-2);
+  }
+  h2.experience-title {
+    margin: 0px auto 20px;
+    max-width: 685px;
+    font-size: 1.45em;
+    line-height: 1.5em;
+    font-weight: 700;
+    color: var(--text-color-white);
+    &::first-letter {
+      text-transform: uppercase;
+    }
+    @include screen('desktop') {
+      font-size: 2em;
+    }
+  }
+  p.experience-sub-title {
+    margin-bottom: 50px;
+    font-size: 1em;
+    line-height: 1.5em;
+    font-weight: 400;
+    color: var(--text-color-white);
+  }
+}
+
+section.about-hostingor {
+  h3.title {
+    margin-bottom: 30px;
+    font-size: 1em;
+    letter-spacing: 0.4em;
+    text-transform: capitalize;
+    color: var(--text-color-black-2);
+  }
+  h2.about-hostingor-title {
+    margin-bottom: 20px;
+    font-size: 1.6em; // * 2.625em olacak
+    line-height: 1.5em;
+    font-weight: 700;
+    color: var(--text-color-black);
+    text-transform: capitalize;
+  }
+  p.about-hostinger-sub-title {
+    margin-bottom: 30px;
+    font-size: 1em;
+    line-height: 1.5em;
+    color: var(--text-color-black-3);
+  }
+  .hostingor-img-wrapper {
+    margin-bottom: 35px;
+  }
+  ul.services-list {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    .block1,
+    .block2 {
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: center;
+      align-items: flex-start;
+      margin-bottom: 30px;
+      @include screen('tablet') {
+        margin-right: 65px;
+        margin-bottom: 0;
+      }
+    }
+    @include screen('tablet') {
+      flex-flow: row nowrap;
+      align-items: center;
+      justify-content: center;
+    }
+    li.services-list-item {
+      display: inline-flex;
+      flex-flow: row nowrap;
+      justify-content: flex-start;
+      align-items: center;
+      margin-bottom: 30px;
+      font-size: 1em;
+      font-weight: 700;
+      color: var(--text-color-black);
+      &:last-child {
+        margin-bottom: 0px;
+      }
+      p {
+        margin-left: 10px;
+      }
+    }
   }
 }

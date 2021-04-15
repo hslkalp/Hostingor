@@ -1,7 +1,21 @@
 .card {
+  max-width: 330px;
   text-align: center;
   padding: 50px 30px;
   position: relative;
   border-radius: 20px;
   background: var(--bg-white);
+  &-title {
+    font-size: 1.3em;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  &-sub-title {
+    font-size: 0.875em;
+    margin-bottom: 20px;
+  }
+  &-text {
+    font-size: 1em;
+    line-height: 1.7em;
+  }
 }
